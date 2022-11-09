@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace UKEditor
@@ -30,7 +24,7 @@ namespace UKEditor
 
         private void 閉じるToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -53,7 +47,7 @@ namespace UKEditor
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void バージョン情報ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,5 +55,5 @@ namespace UKEditor
             AboutBox1 newAboutBox = new AboutBox1();
             newAboutBox.ShowDialog();
         }
-      }
     }
+}
