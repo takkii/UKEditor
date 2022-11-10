@@ -22,12 +22,12 @@ namespace UKEditor
 
             if (i > -1)
             {
-               this.label3.Text = "見つかりました。";
+               this.label3.Text = i + "文字目 : " + "見つかりました。";
             }
             else
             {
                 this.label3.Text = "最後まで検索しました。";
             }
-            }
         }
     }
+}

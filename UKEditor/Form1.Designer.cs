@@ -61,6 +61,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.powerShellToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,13 +97,13 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(160, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(167, 6);
             // 
             // 新規作成ToolStripMenuItem
             // 
             this.新規作成ToolStripMenuItem.Name = "新規作成ToolStripMenuItem";
             this.新規作成ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.新規作成ToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.新規作成ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.新規作成ToolStripMenuItem.Text = "新規作成";
             this.新規作成ToolStripMenuItem.Click += new System.EventHandler(this.新規作成ToolStripMenuItem_Click);
             // 
@@ -110,7 +111,7 @@
             // 
             this.開くToolStripMenuItem.Name = "開くToolStripMenuItem";
             this.開くToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.開くToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.開くToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.開くToolStripMenuItem.Text = "開く";
             this.開くToolStripMenuItem.Click += new System.EventHandler(this.開くToolStripMenuItem_Click);
             // 
@@ -127,20 +128,20 @@
             // 
             this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
             this.保存ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
-            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.保存ToolStripMenuItem.Text = "保存";
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.保存ToolStripMenuItem.Text = "名前を付けて保存";
             this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(160, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
             // 
             // 閉じるToolStripMenuItem
             // 
             this.閉じるToolStripMenuItem.Name = "閉じるToolStripMenuItem";
             this.閉じるToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.閉じるToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.閉じるToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.閉じるToolStripMenuItem.Text = "閉じる";
             this.閉じるToolStripMenuItem.Click += new System.EventHandler(this.閉じるToolStripMenuItem_Click);
             // 
@@ -225,7 +226,8 @@
             // 
             this.その他ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ストップウオッチToolStripMenuItem,
-            this.デジタルタイマーToolStripMenuItem});
+            this.デジタルタイマーToolStripMenuItem,
+            this.powerShellToolStripMenuItem});
             this.その他ToolStripMenuItem.Name = "その他ToolStripMenuItem";
             this.その他ToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.その他ToolStripMenuItem.Text = "その他";
@@ -324,6 +326,13 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // powerShellToolStripMenuItem
+            // 
+            this.powerShellToolStripMenuItem.Name = "powerShellToolStripMenuItem";
+            this.powerShellToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.powerShellToolStripMenuItem.Text = "PowerShellを起動";
+            this.powerShellToolStripMenuItem.Click += new System.EventHandler(this.powerShellToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -380,6 +389,7 @@
         private System.Windows.Forms.ToolStripMenuItem デジタルタイマーToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripMenuItem 上書き保存ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem powerShellToolStripMenuItem;
     }
 }
 
