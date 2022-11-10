@@ -4,6 +4,7 @@ using System.Drawing.Printing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace UKEditor
 {
@@ -257,6 +258,26 @@ namespace UKEditor
         private void 上書き保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             File.WriteAllText(FileName, textBox1.Text, Encoding.GetEncoding("Shift_JIS"));     
+        }
+
+        private void powerShellToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process cmd = new Process();
+                cmd.StartInfo.WorkingDirectory = @"C:\";
+                cmd.StartInfo.FileName = "C:/Program Files/PowerShell/7/pwsh.exe";
+                cmd.Start();
+            }
+            catch (Exception shell)
+            {
+                Console.WriteLine(shell);
+                Console.WriteLine();
+                Console.WriteLine("https://github.com/PowerShell/PowerShell/releases");
+                Console.WriteLine();
+                Console.WriteLine("最新のPowerShellを手に入れて、設定してください。");
+                Console.WriteLine();
+            }
         }
     }
 }
