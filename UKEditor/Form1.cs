@@ -189,7 +189,7 @@ namespace UKEditor
             }
             catch (Exception except)
             {
-                Console.WriteLine(except);
+                MessageBox.Show(except.Message, "エラーを捕捉しました。");
             }
         }
 
