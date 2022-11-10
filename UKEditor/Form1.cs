@@ -271,12 +271,9 @@ namespace UKEditor
             }
             catch (Exception shell)
             {
-                Console.WriteLine(shell);
-                Console.WriteLine();
-                Console.WriteLine("https://github.com/PowerShell/PowerShell/releases");
-                Console.WriteLine();
-                Console.WriteLine("最新のPowerShellを手に入れて、設定してください。");
-                Console.WriteLine();
+                MessageBox.Show(shell.Message, "エラーを捕捉しました");
+                MessageBox.Show("https://github.com/PowerShell/PowerShell/releases");
+                MessageBox.Show("最新のPowerShellを手に入れて、設定してください。");
             }
         }
     }
