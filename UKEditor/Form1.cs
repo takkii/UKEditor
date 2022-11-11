@@ -30,7 +30,7 @@ namespace UKEditor
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                StreamReader reader = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("Shift_JIS"));
+                StreamReader reader = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
                 FileName = openFileDialog1.FileName;
                 textBox1.Text = reader.ReadToEnd();
                 reader.Close();
@@ -43,7 +43,7 @@ namespace UKEditor
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                StreamWriter writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.GetEncoding("Shift_JIS"));
+                StreamWriter writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.GetEncoding("UTF-8"));
                 FileName = saveFileDialog1.FileName;
                 writer.Write(textBox1.Text);
                 writer.Close();
@@ -257,7 +257,7 @@ namespace UKEditor
 
         private void 上書き保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            File.WriteAllText(FileName, textBox1.Text, Encoding.GetEncoding("Shift_JIS"));     
+            File.WriteAllText(FileName, textBox1.Text, Encoding.GetEncoding("UTF-8"));     
         }
 
         private void powerShellToolStripMenuItem_Click(object sender, EventArgs e)
@@ -275,6 +275,13 @@ namespace UKEditor
                 MessageBox.Show("https://github.com/PowerShell/PowerShell/releases");
                 MessageBox.Show("PowerShellを手に入れて、デフォルトのPATHで設定してください。");
             }
+        }
+
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            // Filter by All Files
+            dlg.Filter = "テキスト文書|*.txt|" + "すべてのファイル|*.*";
         }
     }
 }
