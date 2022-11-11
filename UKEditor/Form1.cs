@@ -273,7 +273,7 @@ namespace UKEditor
             {
                 MessageBox.Show(shell.Message, "エラーを捕捉しました");
                 MessageBox.Show("https://github.com/PowerShell/PowerShell/releases");
-                MessageBox.Show("最新のPowerShellを手に入れて、設定してください。");
+                MessageBox.Show("PowerShellを手に入れて、デフォルトのPATHで設定してください。");
             }
         }
     }
