@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
+using System.Management.Automation;
 using System.Text;
 using System.Windows.Forms;
 
@@ -28,6 +30,11 @@ namespace UKEditor
 
         private void 開くToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.openFileDialog1.Title = "ファイルの選択";
+            this.openFileDialog1.CheckFileExists = true;
+            this.openFileDialog1.RestoreDirectory = true;
+            this.openFileDialog1.Filter = "PowerShellファイル|*.ps1|テキストファイル|*.txt|すべてのファイル|*.*";
+
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamReader reader = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
@@ -41,6 +48,11 @@ namespace UKEditor
 
         private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.saveFileDialog1.Title = "ファイルの選択";
+            this.saveFileDialog1.CheckFileExists = true;
+            this.saveFileDialog1.RestoreDirectory = true;
+            this.saveFileDialog1.Filter = "PowerShellファイル|*.ps1|テキストファイル|*.txt|すべてのファイル|*.*";
+
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.GetEncoding("UTF-8"));
@@ -277,13 +289,6 @@ namespace UKEditor
             }
         }
 
-        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            OpenFileDialog dlg = new OpenFileDialog();
-            // Filter by All Files
-            dlg.Filter = "テキスト文書|*.txt|" + "すべてのファイル|*.*";
-        }
-
         private void powerShellを実行ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form5 d = new Form5();
@@ -303,6 +308,32 @@ namespace UKEditor
             catch (Exception shell)
             {
                 MessageBox.Show(shell.Message, "エラーを捕捉しました");
+            }
+        }
+
+        private void スクリプトを実行ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamReader reader = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
+                String text_area = reader.ReadToEnd();
+                string filepath = text_area;
+                reader.Close();
+
+                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                Collection<PSObject> result = runspaceInvoke.Invoke(filepath);
+                runspaceInvoke.Dispose();
+
+                foreach (PSObject result_str in result)
+                {
+                    textBox1.AppendText(result_str.ToString());
+                    textBox1.AppendText("\n");
+                }
+            }
+            catch (Exception cept)
+            {
+                MessageBox.Show(cept.Message, "エラーを捕捉しました。");
             }
         }
     }
