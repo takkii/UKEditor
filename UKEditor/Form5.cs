@@ -19,20 +19,27 @@ namespace UKEditor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StreamReader reader = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
-            String text_area = reader.ReadToEnd();
-            string filepath = text_area;
-            reader.Close();
-
-            RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
-
-            Collection<PSObject> result = runspaceInvoke.Invoke(filepath);
-            runspaceInvoke.Dispose();
-
-            foreach (PSObject result_str in result)
+            try
             {
-                richTextBox1.AppendText(result_str.ToString());
-                richTextBox1.AppendText("\n");　　　　　　　　　　　　//改行する
+                StreamReader reader = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
+                String text_area = reader.ReadToEnd();
+                string filepath = text_area;
+                reader.Close();
+
+                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                Collection<PSObject> result = runspaceInvoke.Invoke(filepath);
+                runspaceInvoke.Dispose();
+
+                foreach (PSObject result_str in result)
+                {
+                    richTextBox1.AppendText(result_str.ToString());
+                    richTextBox1.AppendText("\n");　　　　　　　　　　　　//改行する
+                }
+            }
+            catch (Exception cept)
+            {
+                MessageBox.Show(cept.Message, "エラーを捕捉しました。");
             }
         }
 
