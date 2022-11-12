@@ -9,6 +9,8 @@ namespace UKEditor
 {
     public partial class Form5 : Form
     {
+        private string FileName = "";
+
         public Form5()
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -53,6 +55,45 @@ namespace UKEditor
             this.著作者情報ToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.H;
             AboutBox1 newAboutBox = new AboutBox1();
             newAboutBox.ShowDialog();
+        }
+
+        private void 名前を付けて保存ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.GetEncoding("UTF-8"));
+                FileName = saveFileDialog1.FileName;
+                writer.Write(richTextBox1.Text);
+                writer.Close();
+                Text = Path.GetFileName(saveFileDialog1.FileName) + " - PowerShell";
+                上書き保存ToolStripMenuItem.Enabled = true;
+            }
+        }
+
+        private void 上書き保存ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(FileName, richTextBox1.Text, Encoding.GetEncoding("UTF-8")); 
+        }
+
+        private void 開くToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                StreamReader reader = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
+                FileName = openFileDialog1.FileName;
+                richTextBox1.Text = reader.ReadToEnd();
+                reader.Close();
+                Text = Path.GetFileName(openFileDialog1.FileName) + " - PowerShell";
+                上書き保存ToolStripMenuItem.Enabled = true;
+            }
+        }
+
+        private void 新規作成ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "";
+            Text = "無題 - PowerShell";
+            上書き保存ToolStripMenuItem.Enabled = false;
+            this.新規作成ToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.A;
         }
     }
 }
