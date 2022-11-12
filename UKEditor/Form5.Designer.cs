@@ -35,10 +35,10 @@
             this.ファイルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.閉じるToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ヘルプToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.著作者情報ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.著作者情報ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,7 @@
             // 閉じるToolStripMenuItem
             // 
             this.閉じるToolStripMenuItem.Name = "閉じるToolStripMenuItem";
+            this.閉じるToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.閉じるToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.閉じるToolStripMenuItem.Text = "閉じる";
             this.閉じるToolStripMenuItem.Click += new System.EventHandler(this.閉じるToolStripMenuItem_Click);
@@ -93,6 +94,14 @@
             this.ヘルプToolStripMenuItem.Name = "ヘルプToolStripMenuItem";
             this.ヘルプToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.ヘルプToolStripMenuItem.Text = "ヘルプ";
+            // 
+            // 著作者情報ToolStripMenuItem
+            // 
+            this.著作者情報ToolStripMenuItem.Name = "著作者情報ToolStripMenuItem";
+            this.著作者情報ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
+            this.著作者情報ToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.著作者情報ToolStripMenuItem.Text = "著作者情報";
+            this.著作者情報ToolStripMenuItem.Click += new System.EventHandler(this.著作者情報ToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
@@ -114,13 +123,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(282, 19);
             this.textBox1.TabIndex = 4;
-            // 
-            // 著作者情報ToolStripMenuItem
-            // 
-            this.著作者情報ToolStripMenuItem.Name = "著作者情報ToolStripMenuItem";
-            this.著作者情報ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.著作者情報ToolStripMenuItem.Text = "著作者情報";
-            this.著作者情報ToolStripMenuItem.Click += new System.EventHandler(this.著作者情報ToolStripMenuItem_Click);
             // 
             // Form5
             // 
