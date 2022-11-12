@@ -283,5 +283,12 @@ namespace UKEditor
             // Filter by All Files
             dlg.Filter = "テキスト文書|*.txt|" + "すべてのファイル|*.*";
         }
+
+        private void powerShellを実行ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form5 d = new Form5();
+            d.ShowDialog(this);
+            d.Dispose();
+        }
     }
 }
