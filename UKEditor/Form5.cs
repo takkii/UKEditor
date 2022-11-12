@@ -34,7 +34,7 @@ namespace UKEditor
                 foreach (PSObject result_str in result)
                 {
                     richTextBox1.AppendText(result_str.ToString());
-                    richTextBox1.AppendText("\n");　　　　　　　　　　　　//改行する
+                    richTextBox1.AppendText("\n");
                 }
             }
             catch (Exception cept)
@@ -66,6 +66,11 @@ namespace UKEditor
 
         private void 名前を付けて保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.saveFileDialog1.Title = "ファイルの選択";
+            this.saveFileDialog1.CheckFileExists = true;
+            this.saveFileDialog1.RestoreDirectory = true;
+            this.saveFileDialog1.Filter = "PowerShellファイル|*.ps1|テキストファイル|*.txt|すべてのファイル|*.*";
+
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.GetEncoding("UTF-8"));
@@ -84,6 +89,11 @@ namespace UKEditor
 
         private void 開くToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.openFileDialog1.Title = "ファイルの選択";
+            this.openFileDialog1.CheckFileExists = true;
+            this.openFileDialog1.RestoreDirectory = true;
+            this.openFileDialog1.Filter = "PowerShellファイル|*.ps1|テキストファイル|*.txt|すべてのファイル|*.*";
+
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamReader reader = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
