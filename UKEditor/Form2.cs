@@ -7,6 +7,7 @@ namespace UKEditor
     {
         public Form2()
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             InitializeComponent();
         }
 
