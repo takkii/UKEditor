@@ -63,6 +63,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.powerShellを起動純正ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -228,6 +229,7 @@
             this.その他ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ストップウオッチToolStripMenuItem,
             this.デジタルタイマーToolStripMenuItem,
+            this.powerShellを起動純正ToolStripMenuItem,
             this.powerShellToolStripMenuItem,
             this.powerShellを実行ToolStripMenuItem});
             this.その他ToolStripMenuItem.Name = "その他ToolStripMenuItem";
@@ -344,6 +346,14 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // powerShellを起動純正ToolStripMenuItem
+            // 
+            this.powerShellを起動純正ToolStripMenuItem.Name = "powerShellを起動純正ToolStripMenuItem";
+            this.powerShellを起動純正ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F10)));
+            this.powerShellを起動純正ToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.powerShellを起動純正ToolStripMenuItem.Text = "PowerShellを起動(純正)";
+            this.powerShellを起動純正ToolStripMenuItem.Click += new System.EventHandler(this.powerShellを起動純正ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -402,6 +412,7 @@
         private System.Windows.Forms.ToolStripMenuItem 上書き保存ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem powerShellToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem powerShellを実行ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem powerShellを起動純正ToolStripMenuItem;
     }
 }
 
