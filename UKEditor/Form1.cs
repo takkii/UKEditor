@@ -290,5 +290,20 @@ namespace UKEditor
             d.ShowDialog(this);
             d.Dispose();
         }
+
+        private void powerShellを起動純正ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process cmd = new Process();
+                cmd.StartInfo.WorkingDirectory = @"C:\";
+                cmd.StartInfo.FileName = "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe";
+                cmd.Start();
+            }
+            catch (Exception shell)
+            {
+                MessageBox.Show(shell.Message, "エラーを捕捉しました");
+            }
+        }
     }
 }
