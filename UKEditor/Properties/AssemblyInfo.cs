@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
 [assembly: AssemblyTitle("UKEditor")]
-[assembly: AssemblyDescription("PowerShell用エディタ")]
+[assembly: AssemblyDescription("テキストエディタ拡張型PowerShell")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("UKEditor")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // すべての値を指定するか、下のように '*' を使ってビルドおよびリビジョン番号を 
 // 既定値にすることができます:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.1.4")]
-[assembly: AssemblyFileVersion("1.0.1.4")]
+[assembly: AssemblyVersion("1.0.1.5")]
+[assembly: AssemblyFileVersion("1.0.1.5")]
