@@ -197,7 +197,7 @@ namespace UKEditor
             this.ヘルプToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F2;
             try
             {
-                System.Diagnostics.Process.Start("https://github.com/takkii");
+                System.Diagnostics.Process.Start("https://github.com/takkii/UKEditor");
             }
             catch (Exception except)
             {
