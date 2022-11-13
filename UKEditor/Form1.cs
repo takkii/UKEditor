@@ -21,12 +21,6 @@ namespace UKEditor
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            this.textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-            this.textBox1.AutoCompleteSource = AutoCompleteSource.AllSystemSources;
-        }
-
         private void 閉じるToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.閉じるToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.E;
