@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
-            this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ファイルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,26 +44,18 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.button3 = new System.Windows.Forms.Button();
+            this.コマンドToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.実行ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(362, 407);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "実行(開く)";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(0, 40);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 32);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(510, 359);
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBox1.Size = new System.Drawing.Size(628, 526);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
@@ -72,11 +63,12 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ファイルToolStripMenuItem,
+            this.コマンドToolStripMenuItem,
             this.ヘルプToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(10, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(510, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(628, 35);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -155,10 +147,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(20, 407);
+            this.button2.Location = new System.Drawing.Point(478, 558);
             this.button2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 35);
+            this.button2.Size = new System.Drawing.Size(70, 35);
             this.button2.TabIndex = 3;
             this.button2.Text = "参照";
             this.button2.UseVisualStyleBackColor = true;
@@ -166,7 +158,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(20, 450);
+            this.textBox1.Location = new System.Drawing.Point(5, 561);
             this.textBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(467, 25);
@@ -175,32 +167,47 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(195, 407);
+            this.button3.Location = new System.Drawing.Point(552, 558);
             this.button3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 35);
+            this.button3.Size = new System.Drawing.Size(70, 35);
             this.button3.TabIndex = 5;
-            this.button3.Text = "実行(PATH)";
+            this.button3.Text = "実行";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // コマンドToolStripMenuItem
+            // 
+            this.コマンドToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.実行ToolStripMenuItem});
+            this.コマンドToolStripMenuItem.Name = "コマンドToolStripMenuItem";
+            this.コマンドToolStripMenuItem.Size = new System.Drawing.Size(77, 29);
+            this.コマンドToolStripMenuItem.Text = "コマンド";
+            // 
+            // 実行ToolStripMenuItem
+            // 
+            this.実行ToolStripMenuItem.Name = "実行ToolStripMenuItem";
+            this.実行ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
+            this.実行ToolStripMenuItem.Size = new System.Drawing.Size(181, 30);
+            this.実行ToolStripMenuItem.Text = "実行";
+            this.実行ToolStripMenuItem.Click += new System.EventHandler(this.実行ToolStripMenuItem_Click);
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(510, 496);
+            this.ClientSize = new System.Drawing.Size(628, 594);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Form5";
-            this.Text = "PowerShell";
+            this.Text = "PowerShellBox";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -210,7 +217,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ファイルToolStripMenuItem;
@@ -226,5 +232,7 @@
         private System.Windows.Forms.ToolStripMenuItem 開くToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 新規作成ToolStripMenuItem;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolStripMenuItem コマンドToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 実行ToolStripMenuItem;
     }
 }

@@ -17,32 +17,6 @@ namespace UKEditor
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                StreamReader reader = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
-                String text_area = reader.ReadToEnd();
-                string filepath = text_area;
-                reader.Close();
-
-                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
-
-                Collection<PSObject> result = runspaceInvoke.Invoke(filepath);
-                runspaceInvoke.Dispose();
-
-                foreach (PSObject result_str in result)
-                {
-                    richTextBox1.AppendText(result_str.ToString());
-                    richTextBox1.AppendText("\n");
-                }
-            }
-            catch (Exception cept)
-            {
-                MessageBox.Show(cept.Message, "エラーを捕捉しました。");
-            }
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             DialogResult dr = openFileDialog1.ShowDialog();
@@ -124,6 +98,32 @@ namespace UKEditor
             try
             {
                 StreamReader reader = new StreamReader(textBox1.Text, Encoding.GetEncoding("UTF-8"));
+                String text_area = reader.ReadToEnd();
+                string filepath = text_area;
+                reader.Close();
+
+                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                Collection<PSObject> result = runspaceInvoke.Invoke(filepath);
+                runspaceInvoke.Dispose();
+
+                foreach (PSObject result_str in result)
+                {
+                    richTextBox1.AppendText(result_str.ToString());
+                    richTextBox1.AppendText("\n");
+                }
+            }
+            catch (Exception cept)
+            {
+                MessageBox.Show(cept.Message, "エラーを捕捉しました。");
+            }
+        }
+
+        private void 実行ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamReader reader = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
                 String text_area = reader.ReadToEnd();
                 string filepath = text_area;
                 reader.Close();
