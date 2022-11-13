@@ -118,5 +118,31 @@ namespace UKEditor
             this.textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
             this.textBox1.AutoCompleteSource = AutoCompleteSource.AllSystemSources;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamReader reader = new StreamReader(textBox1.Text, Encoding.GetEncoding("UTF-8"));
+                String text_area = reader.ReadToEnd();
+                string filepath = text_area;
+                reader.Close();
+
+                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                Collection<PSObject> result = runspaceInvoke.Invoke(filepath);
+                runspaceInvoke.Dispose();
+
+                foreach (PSObject result_str in result)
+                {
+                    richTextBox1.AppendText(result_str.ToString());
+                    richTextBox1.AppendText("\n");
+                }
+            }
+            catch (Exception cept)
+            {
+                MessageBox.Show(cept.Message, "エラーを捕捉しました。");
+            }
+        }
     }
 }
