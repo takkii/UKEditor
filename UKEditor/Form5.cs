@@ -51,7 +51,7 @@ namespace UKEditor
                 FileName = saveFileDialog1.FileName;
                 writer.Write(richTextBox1.Text);
                 writer.Close();
-                Text = Path.GetFileName(saveFileDialog1.FileName) + " - PowerShell";
+                Text = Path.GetFileName(saveFileDialog1.FileName) + " - PowerShellBox";
                 上書き保存ToolStripMenuItem.Enabled = true;
             }
         }
@@ -74,7 +74,7 @@ namespace UKEditor
                 FileName = openFileDialog1.FileName;
                 richTextBox1.Text = reader.ReadToEnd();
                 reader.Close();
-                Text = Path.GetFileName(openFileDialog1.FileName) + " - PowerShell";
+                Text = Path.GetFileName(openFileDialog1.FileName) + " - PowerShellBox";
                 上書き保存ToolStripMenuItem.Enabled = true;
             }
         }
@@ -82,7 +82,6 @@ namespace UKEditor
         private void 新規作成ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "";
-            Text = "無題 - PowerShell";
             上書き保存ToolStripMenuItem.Enabled = false;
             this.新規作成ToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.A;
         }
@@ -123,6 +122,7 @@ namespace UKEditor
         {
             try
             {
+                上書き保存ToolStripMenuItem.Enabled = false;
                 StreamReader reader = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
                 String text_area = reader.ReadToEnd();
                 string filepath = text_area;
