@@ -112,5 +112,11 @@ namespace UKEditor
             上書き保存ToolStripMenuItem.Enabled = false;
             this.新規作成ToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.A;
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            this.textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
+            this.textBox1.AutoCompleteSource = AutoCompleteSource.AllSystemSources;
+        }
     }
 }
