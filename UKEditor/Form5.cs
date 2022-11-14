@@ -82,6 +82,7 @@ namespace UKEditor
         private void 新規作成ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "";
+            Text = "無題 - PowerShellBox";
             上書き保存ToolStripMenuItem.Enabled = false;
             this.新規作成ToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.A;
         }
