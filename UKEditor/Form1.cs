@@ -342,5 +342,10 @@ namespace UKEditor
             settingDialog dialog = new settingDialog(textBox1);
             dialog.ShowDialog(this);
         }
+
+        private void 全範囲選択ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.textBox1.SelectAll();
+        }
     }
 }
