@@ -341,7 +341,6 @@ namespace UKEditor
         {
             settingDialog dialog = new settingDialog(textBox1);
             dialog.ShowDialog(this);
-            dialog.Dispose();
         }
     }
 }
