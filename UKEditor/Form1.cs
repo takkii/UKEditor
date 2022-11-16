@@ -336,5 +336,11 @@ namespace UKEditor
                 MessageBox.Show(cept.Message, "エラーを捕捉しました。");
             }
         }
+
+        private void 設定ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            settingDialog dialog = new settingDialog(textBox1);
+            dialog.ShowDialog(this);
+        }
     }
 }
