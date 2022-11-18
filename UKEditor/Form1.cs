@@ -37,11 +37,11 @@ namespace UKEditor
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                StreamReader reader = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
                 FileName = openFileDialog1.FileName;
+                StreamReader reader = new StreamReader(FileName, Encoding.GetEncoding("UTF-8"));
                 textBox1.Text = reader.ReadToEnd();
                 reader.Close();
-                Text = Path.GetFileName(openFileDialog1.FileName) + " - UKEditor";
+                Text = Path.GetFileName(FileName) + " - UKEditor";
                 上書き保存ToolStripMenuItem.Enabled = true;
             }
         }
@@ -55,11 +55,11 @@ namespace UKEditor
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                StreamWriter writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.GetEncoding("UTF-8"));
                 FileName = saveFileDialog1.FileName;
+                StreamWriter writer = new StreamWriter(FileName, false, Encoding.GetEncoding("UTF-8"));
                 writer.Write(textBox1.Text);
                 writer.Close();
-                Text = Path.GetFileName(saveFileDialog1.FileName) + " - UKEditor";
+                Text = Path.GetFileName(FileName) + " - UKEditor";
                 上書き保存ToolStripMenuItem.Enabled = true;
             }
         }
@@ -291,9 +291,16 @@ namespace UKEditor
 
         private void powerShellを実行ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form5 d = new Form5();
-            d.ShowDialog(this);
-            d.Dispose();
+            try
+            {
+                Form5 d = new Form5();
+                d.ShowDialog(this);
+                d.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "エラーを捕捉しました");
+            }
         }
 
         private void powerShellを起動純正ToolStripMenuItem_Click(object sender, EventArgs e)
