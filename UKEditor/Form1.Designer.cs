@@ -39,6 +39,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.閉じるToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.編集ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.全範囲選択ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.コピーToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.切り取りToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.貼り付けToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +67,6 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.全範囲選択ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,6 +162,14 @@
             this.編集ToolStripMenuItem1.Name = "編集ToolStripMenuItem1";
             this.編集ToolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
             this.編集ToolStripMenuItem1.Text = "編集";
+            // 
+            // 全範囲選択ToolStripMenuItem
+            // 
+            this.全範囲選択ToolStripMenuItem.Name = "全範囲選択ToolStripMenuItem";
+            this.全範囲選択ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.全範囲選択ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.全範囲選択ToolStripMenuItem.Text = "全範囲選択";
+            this.全範囲選択ToolStripMenuItem.Click += new System.EventHandler(this.全範囲選択ToolStripMenuItem_Click);
             // 
             // コピーToolStripMenuItem
             // 
@@ -326,7 +334,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.DefaultExt = "txt";
-            this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "(*.ps1)|[*.";
             // 
             // textBox1
@@ -375,14 +382,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(883, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // 全範囲選択ToolStripMenuItem
-            // 
-            this.全範囲選択ToolStripMenuItem.Name = "全範囲選択ToolStripMenuItem";
-            this.全範囲選択ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.全範囲選択ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.全範囲選択ToolStripMenuItem.Text = "全範囲選択";
-            this.全範囲選択ToolStripMenuItem.Click += new System.EventHandler(this.全範囲選択ToolStripMenuItem_Click);
             // 
             // Form1
             // 

@@ -47,11 +47,11 @@ namespace UKEditor
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                StreamWriter writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.GetEncoding("UTF-8"));
                 FileName = saveFileDialog1.FileName;
+                StreamWriter writer = new StreamWriter(FileName, false, Encoding.GetEncoding("UTF-8"));
                 writer.Write(richTextBox1.Text);
                 writer.Close();
-                Text = Path.GetFileName(saveFileDialog1.FileName) + " - PowerShellBox";
+                Text = Path.GetFileName(FileName) + " - PowerShellBox";
                 上書き保存ToolStripMenuItem.Enabled = true;
             }
         }
@@ -70,11 +70,11 @@ namespace UKEditor
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                StreamReader reader = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
                 FileName = openFileDialog1.FileName;
+                StreamReader reader = new StreamReader(FileName, Encoding.GetEncoding("UTF-8"));
                 richTextBox1.Text = reader.ReadToEnd();
                 reader.Close();
-                Text = Path.GetFileName(openFileDialog1.FileName) + " - PowerShellBox";
+                Text = Path.GetFileName(FileName) + " - PowerShellBox";
                 上書き保存ToolStripMenuItem.Enabled = true;
             }
         }
