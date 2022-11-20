@@ -49,7 +49,6 @@ namespace UKEditor
         private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.saveFileDialog1.Title = "ファイルの選択";
-            this.saveFileDialog1.CheckFileExists = true;
             this.saveFileDialog1.RestoreDirectory = true;
             this.saveFileDialog1.Filter = "PowerShellファイル|*.ps1|テキストファイル|*.txt|すべてのファイル|*.*";
 
@@ -323,20 +322,42 @@ namespace UKEditor
             try
             {
                 StreamReader reader = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
-                String text_area = reader.ReadToEnd();
-                string filepath = text_area;
-                reader.Close();
-
-                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
-
-                Collection<PSObject> result = runspaceInvoke.Invoke(filepath);
-                runspaceInvoke.Dispose();
-
-                foreach (PSObject result_str in result)
+                if (reader == null)
                 {
-                    textBox1.AppendText(result_str.ToString());
-                    textBox1.AppendText("\n");
+                    StreamReader save_reader = new StreamReader(saveFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
+                    String text_area = save_reader.ReadToEnd();
+                    string filepath = text_area;
+                    save_reader.Close();
+
+                    RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                    Collection<PSObject> result = runspaceInvoke.Invoke(filepath);
+                    runspaceInvoke.Dispose();
+
+                    foreach (PSObject result_str in result)
+                    {
+                        textBox1.AppendText(result_str.ToString());
+                        textBox1.AppendText("\n");
+                    }
+                } 
+                else
+                {
+                    String text_area = reader.ReadToEnd();
+                    string filepath = text_area;
+                    reader.Close();
+
+                    RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                    Collection<PSObject> result = runspaceInvoke.Invoke(filepath);
+                    runspaceInvoke.Dispose();
+
+                    foreach (PSObject result_str in result)
+                    {
+                        textBox1.AppendText(result_str.ToString());
+                        textBox1.AppendText("\n");
+                    }
                 }
+
             }
             catch (Exception cept)
             {
