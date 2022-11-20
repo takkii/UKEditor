@@ -67,6 +67,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.powerShell実行保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -246,6 +247,7 @@
             this.powerShellToolStripMenuItem,
             this.powerShellを実行ToolStripMenuItem,
             this.スクリプトを実行ToolStripMenuItem,
+            this.powerShell実行保存ToolStripMenuItem,
             this.設定ToolStripMenuItem});
             this.その他ToolStripMenuItem.Name = "その他ToolStripMenuItem";
             this.その他ToolStripMenuItem.Size = new System.Drawing.Size(70, 29);
@@ -388,6 +390,14 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // powerShell実行保存ToolStripMenuItem
+            // 
+            this.powerShell実行保存ToolStripMenuItem.Name = "powerShell実行保存ToolStripMenuItem";
+            this.powerShell実行保存ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
+            this.powerShell実行保存ToolStripMenuItem.Size = new System.Drawing.Size(327, 30);
+            this.powerShell実行保存ToolStripMenuItem.Text = "PowerShell実行(保存)";
+            this.powerShell実行保存ToolStripMenuItem.Click += new System.EventHandler(this.powerShell実行保存ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
@@ -450,6 +460,7 @@
         private System.Windows.Forms.ToolStripMenuItem スクリプトを実行ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 設定ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 全範囲選択ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem powerShell実行保存ToolStripMenuItem;
     }
 }
 

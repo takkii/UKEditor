@@ -353,5 +353,31 @@ namespace UKEditor
         {
             this.textBox1.SelectAll();
         }
+
+        private void powerShell実行保存ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamReader save_reader = new StreamReader(saveFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
+                String save_text_area = save_reader.ReadToEnd();
+                string save_filepath = save_text_area;
+                save_reader.Close();
+
+                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                Collection<PSObject> save_result = runspaceInvoke.Invoke(save_filepath);
+                runspaceInvoke.Dispose();
+
+                foreach (PSObject result_str in save_result)
+                {
+                    textBox1.AppendText(result_str.ToString());
+                    textBox1.AppendText("\n");
+                }
+            }
+            catch (Exception cept)
+            {
+                MessageBox.Show(cept.Message, "エラーを捕捉しました。");
+            }
+        }
     }
 }
