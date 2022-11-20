@@ -322,42 +322,20 @@ namespace UKEditor
             try
             {
                 StreamReader reader = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
-                if (reader == null)
+                String text_area = reader.ReadToEnd();
+                string filepath = text_area;
+                reader.Close();
+
+                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                Collection<PSObject> result = runspaceInvoke.Invoke(filepath);
+                runspaceInvoke.Dispose();
+
+                foreach (PSObject result_str in result)
                 {
-                    StreamReader save_reader = new StreamReader(saveFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
-                    String text_area = save_reader.ReadToEnd();
-                    string filepath = text_area;
-                    save_reader.Close();
-
-                    RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
-
-                    Collection<PSObject> result = runspaceInvoke.Invoke(filepath);
-                    runspaceInvoke.Dispose();
-
-                    foreach (PSObject result_str in result)
-                    {
-                        textBox1.AppendText(result_str.ToString());
-                        textBox1.AppendText("\n");
-                    }
-                } 
-                else
-                {
-                    String text_area = reader.ReadToEnd();
-                    string filepath = text_area;
-                    reader.Close();
-
-                    RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
-
-                    Collection<PSObject> result = runspaceInvoke.Invoke(filepath);
-                    runspaceInvoke.Dispose();
-
-                    foreach (PSObject result_str in result)
-                    {
-                        textBox1.AppendText(result_str.ToString());
-                        textBox1.AppendText("\n");
-                    }
+                    textBox1.AppendText(result_str.ToString());
+                    textBox1.AppendText("\n");
                 }
-
             }
             catch (Exception cept)
             {
