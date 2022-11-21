@@ -23,43 +23,64 @@ namespace UKEditor
 
         private void 閉じるToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.閉じるToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.E;
-            MessageBox.Show("プログラムを終了します", "終了");
-            Application.Exit();
+            try
+            {
+                this.閉じるToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.E;
+                MessageBox.Show("プログラムを終了します", "終了");
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "エラーを捕捉しました");
+            }
         }
 
         private void 開くToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.openFileDialog1.Title = "ファイルの選択";
-            this.openFileDialog1.CheckFileExists = true;
-            this.openFileDialog1.RestoreDirectory = true;
-            this.openFileDialog1.Filter = "PowerShellファイル|*.ps1|テキストファイル|*.txt|すべてのファイル|*.*";
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                FileName = openFileDialog1.FileName;
-                StreamReader reader = new StreamReader(FileName, Encoding.GetEncoding("UTF-8"));
-                textBox1.Text = reader.ReadToEnd();
-                reader.Close();
-                Text = Path.GetFileName(FileName) + " - UKEditor";
-                上書き保存ToolStripMenuItem.Enabled = true;
+                this.openFileDialog1.Title = "ファイルの選択";
+                this.openFileDialog1.CheckFileExists = true;
+                this.openFileDialog1.RestoreDirectory = true;
+                this.openFileDialog1.Filter = "PowerShellファイル|*.ps1|テキストファイル|*.txt|すべてのファイル|*.*";
+
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    FileName = openFileDialog1.FileName;
+                    StreamReader reader = new StreamReader(FileName, Encoding.GetEncoding("UTF-8"));
+                    textBox1.Text = reader.ReadToEnd();
+                    reader.Close();
+                    Text = Path.GetFileName(FileName) + " - UKEditor";
+                    上書き保存ToolStripMenuItem.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "エラーを捕捉しました");
             }
         }
 
         private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.saveFileDialog1.Title = "ファイルの選択";
-            this.saveFileDialog1.RestoreDirectory = true;
-            this.saveFileDialog1.Filter = "PowerShellファイル|*.ps1|テキストファイル|*.txt|すべてのファイル|*.*";
-
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                FileName = saveFileDialog1.FileName;
-                StreamWriter writer = new StreamWriter(FileName, false, Encoding.GetEncoding("UTF-8"));
-                writer.Write(textBox1.Text);
-                writer.Close();
-                Text = Path.GetFileName(FileName) + " - UKEditor";
-                上書き保存ToolStripMenuItem.Enabled = true;
+                this.saveFileDialog1.Title = "ファイルの選択";
+                this.saveFileDialog1.RestoreDirectory = true;
+                this.saveFileDialog1.Filter = "PowerShellファイル|*.ps1|テキストファイル|*.txt|すべてのファイル|*.*";
+
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    FileName = saveFileDialog1.FileName;
+                    StreamWriter writer = new StreamWriter(FileName, false, Encoding.GetEncoding("UTF-8"));
+                    writer.Write(textBox1.Text);
+                    writer.Close();
+                    Text = Path.GetFileName(FileName) + " - UKEditor";
+                    上書き保存ToolStripMenuItem.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "エラーを捕捉しました");
             }
         }
 
@@ -89,56 +110,77 @@ namespace UKEditor
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            Font Fontsize = new Font("MS UI Gothic", 11);
-            int intNumberChars;
-            int intNumberLines;
-            string strPrintString;
-            StringFormat strFormat = new StringFormat();
-
-            Rectangle rectSquare = new Rectangle(
-                e.MarginBounds.Left, e.MarginBounds.Top,
-                e.MarginBounds.Width, e.MarginBounds.Height);
-
-            SizeF SquareSize = new SizeF(
-                e.MarginBounds.Width,
-                e.MarginBounds.Height - Fontsize.GetHeight(e.Graphics));
-
-            e.Graphics.MeasureString(
-                StrPrint, Fontsize, SquareSize, strFormat,
-                out intNumberChars, out intNumberLines);
-
-            strPrintString = StrPrint.Substring(0, intNumberChars);
-
-            e.Graphics.DrawString(
-                strPrintString, Fontsize, Brushes.Black, rectSquare, strFormat);
-
-            if (intNumberChars < StrPrint.Length)
+            try
             {
-                StrPrint = StrPrint.Substring(intNumberChars);
-                e.HasMorePages = true;
+                Font Fontsize = new Font("MS UI Gothic", 11);
+                int intNumberChars;
+                int intNumberLines;
+                string strPrintString;
+                StringFormat strFormat = new StringFormat();
+
+                Rectangle rectSquare = new Rectangle(
+                    e.MarginBounds.Left, e.MarginBounds.Top,
+                    e.MarginBounds.Width, e.MarginBounds.Height);
+
+                SizeF SquareSize = new SizeF(
+                    e.MarginBounds.Width,
+                    e.MarginBounds.Height - Fontsize.GetHeight(e.Graphics));
+
+                e.Graphics.MeasureString(
+                    StrPrint, Fontsize, SquareSize, strFormat,
+                    out intNumberChars, out intNumberLines);
+
+                strPrintString = StrPrint.Substring(0, intNumberChars);
+
+                e.Graphics.DrawString(
+                    strPrintString, Fontsize, Brushes.Black, rectSquare, strFormat);
+
+                if (intNumberChars < StrPrint.Length)
+                {
+                    StrPrint = StrPrint.Substring(intNumberChars);
+                    e.HasMorePages = true;
+                }
+                else
+                {
+                    e.HasMorePages = false;
+                    StrPrint = textBox1.Text;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                e.HasMorePages = false;
-                StrPrint = textBox1.Text;
+                MessageBox.Show(ex.Message, "エラーを捕捉しました");
             }
         }
 
         private void 印刷プレビューToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.印刷プレビューToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Space;
-            printDocument1.DefaultPageSettings = PageSetting;
-            StrPrint = textBox1.Text;
-            printPreviewDialog1.Document = printDocument1;
-            printPreviewDialog1.ShowDialog();
+            try
+            {
+                this.印刷プレビューToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Space;
+                printDocument1.DefaultPageSettings = PageSetting;
+                StrPrint = textBox1.Text;
+                printPreviewDialog1.Document = printDocument1;
+                printPreviewDialog1.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "エラーを捕捉しました");
+            }
         }
 
         private void 新規作成ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            Text = "無題 - UKEditor";
-            上書き保存ToolStripMenuItem.Enabled = false;
-            this.新規作成ToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.A;
+            try
+            {
+                textBox1.Text = "";
+                Text = "無題 - UKEditor";
+                上書き保存ToolStripMenuItem.Enabled = false;
+                this.新規作成ToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.A;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "エラーを捕捉しました");
+            }
         }
 
         private void コピーToolStripMenuItem_Click(object sender, EventArgs e)
@@ -206,9 +248,16 @@ namespace UKEditor
 
         private void 著作者情報ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.著作者情報ToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.H;
-            AboutBox1 newAboutBox = new AboutBox1();
-            newAboutBox.ShowDialog();
+            try
+            {
+                this.著作者情報ToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.H;
+                AboutBox1 newAboutBox = new AboutBox1();
+                newAboutBox.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "エラーを捕捉しました");
+            }
         }
 
         //Form1オブジェクトを保持するためのフィールド
@@ -241,29 +290,50 @@ namespace UKEditor
 
         private void 検索ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.検索ToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F;
-            Form1 f = new Form1();
-            Form1.Form1Instance = f;
-            Form1.Form1Instance = this;
-            Form2 d = new Form2();
-            d.ShowDialog(this);
-            d.Dispose();
+            try
+            {
+                this.検索ToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F;
+                Form1 f = new Form1();
+                Form1.Form1Instance = f;
+                Form1.Form1Instance = this;
+                Form2 d = new Form2();
+                d.ShowDialog(this);
+                d.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "エラーを捕捉しました");
+            }
         }
 
         private void ストップウオッチToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.ストップウオッチToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Tab;
-            Form3 d = new Form3();
-            d.ShowDialog(this);
-            d.Dispose();
+            try
+            {
+                this.ストップウオッチToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Tab;
+                Form3 d = new Form3();
+                d.ShowDialog(this);
+                d.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "エラーを捕捉しました");
+            }
         }
 
         private void デジタルタイマーToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.デジタルタイマーToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F1;
-            Form d = new Form4();
-            d.ShowDialog(this);
-            d.Dispose();
+            try
+            {
+                this.デジタルタイマーToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F1;
+                Form d = new Form4();
+                d.ShowDialog(this);
+                d.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "エラーを捕捉しました");
+            }
         }
 
         private void 上書き保存ToolStripMenuItem_Click(object sender, EventArgs e)
