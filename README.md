@@ -3,8 +3,8 @@
 #### はじめに
 
 ```markdown
-・ UKEditorは、生活習慣で人は毎日トイレに行きます。
- → ルーティーンのようにこのテキストエディタを使うのが理想です。
+・ 生活習慣により、人は毎日トイレに行きます。
+ → 日常の作業効率化のため、ルーティーンのようにUKEditorを使いPowerShellを書くことが理想です。
 ```
 
-_ドキュメントは[こちら](https://github.com/takkii/UKEditor/wiki/manual)_
+_Wikiは、[こちら](https://github.com/takkii/UKEditor/wiki/manual)_
