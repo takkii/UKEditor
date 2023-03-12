@@ -3,8 +3,8 @@
 #### はじめに
 
 ```markdown
-・ UKEditorとは、「箱入り娘」プロジェクトとして個人で開発しているテキストエディタです。
- → 人は毎日、トイレに行きます。ルーティーンのようにこのテキストエディタを使うのが理想です。
+・ UKEditorは、生活習慣で人は毎日トイレに行きます。
+ → ルーティーンのようにこのテキストエディタを使うのが理想です。
 ```
 
-_UKEditorのドキュメントは[こちら](https://github.com/takkii/UKEditor/wiki/manual)_
+_ドキュメントは[こちら](https://github.com/takkii/UKEditor/wiki/manual)_
