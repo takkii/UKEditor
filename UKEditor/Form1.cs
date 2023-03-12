@@ -634,5 +634,60 @@ Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
                 MessageBox.Show(cept.Message, "エラーを捕捉しました。");
             }
         }
+
+        private void こんにちはToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 宣言
+                const string world = "こんにちは、世界";
+
+                // 計算
+                var hello = world;
+
+                // 安定ソート
+                var helloworld = new[]
+                {
+                    hello
+                };
+
+                var orderByList = helloworld.OrderBy(x => x);
+                foreach (var x in orderByList)
+                {
+                    MessageBox.Show(x);
+                }
+            }
+
+            catch (Exception exe)
+            {
+                // 出力
+                MessageBox.Show(exe.Message, "エラーを捕捉しました。");
+            }
+            finally
+            {
+                try
+                {
+                    // 宣言
+                    const string out_exit = "メッセージを終了します";
+
+                    // 安定ソート
+                    var in_out = new[]
+                    {
+                        out_exit
+                    };
+
+                    var orderList = in_out.OrderBy(y => y);
+
+                    foreach (var y in orderList)
+                    {
+                        MessageBox.Show(y);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "エラーを捕捉しました。");
+                }
+            }
+        }
     }
 }
