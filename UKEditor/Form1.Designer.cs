@@ -48,6 +48,8 @@
             this.編集ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.印刷プレビューToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.印刷ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.コードToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.今日は何月何日ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.その他ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ストップウオッチToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.デジタルタイマーToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,9 +71,6 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.コードToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.天気予報ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.今日は何月何日ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -243,6 +242,21 @@
             this.印刷ToolStripMenuItem.Text = "印刷";
             this.印刷ToolStripMenuItem.Click += new System.EventHandler(this.印刷ToolStripMenuItem_Click);
             // 
+            // コードToolStripMenuItem
+            // 
+            this.コードToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.今日は何月何日ToolStripMenuItem});
+            this.コードToolStripMenuItem.Name = "コードToolStripMenuItem";
+            this.コードToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
+            this.コードToolStripMenuItem.Text = "コード";
+            // 
+            // 今日は何月何日ToolStripMenuItem
+            // 
+            this.今日は何月何日ToolStripMenuItem.Name = "今日は何月何日ToolStripMenuItem";
+            this.今日は何月何日ToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
+            this.今日は何月何日ToolStripMenuItem.Text = "今日は何月何日";
+            this.今日は何月何日ToolStripMenuItem.Click += new System.EventHandler(this.今日は何月何日ToolStripMenuItem_Click);
+            // 
             // その他ToolStripMenuItem
             // 
             this.その他ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -412,27 +426,6 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // コードToolStripMenuItem
-            // 
-            this.コードToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.天気予報ToolStripMenuItem,
-            this.今日は何月何日ToolStripMenuItem});
-            this.コードToolStripMenuItem.Name = "コードToolStripMenuItem";
-            this.コードToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
-            this.コードToolStripMenuItem.Text = "コード";
-            // 
-            // 天気予報ToolStripMenuItem
-            // 
-            this.天気予報ToolStripMenuItem.Name = "天気予報ToolStripMenuItem";
-            this.天気予報ToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
-            this.天気予報ToolStripMenuItem.Text = "天気予報";
-            // 
-            // 今日は何月何日ToolStripMenuItem
-            // 
-            this.今日は何月何日ToolStripMenuItem.Name = "今日は何月何日ToolStripMenuItem";
-            this.今日は何月何日ToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
-            this.今日は何月何日ToolStripMenuItem.Text = "今日は何月何日";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
@@ -500,7 +493,6 @@
         private System.Windows.Forms.ToolStripMenuItem powerShell実行保存ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ライセンスToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem コードToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 天気予報ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 今日は何月何日ToolStripMenuItem;
     }
 }
