@@ -689,5 +689,26 @@ Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
                 }
             }
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String one_two = "ruby -e 'puts 1+2'";
+                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                Collection<PSObject> result = runspaceInvoke.Invoke(one_two);
+                runspaceInvoke.Dispose();
+
+                foreach (PSObject result_str in result)
+                {
+                    MessageBox.Show(result_str.ToString());
+                }
+            }
+            catch (Exception cept)
+            {
+                MessageBox.Show(cept.Message, "RubyにPATHを通してください。");
+            }
+        }
     }
 }
