@@ -51,6 +51,7 @@
             this.コードToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.今日は何月何日ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.こんにちはToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.ライセンスToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.その他ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ストップウオッチToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,7 +74,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.オフラインつぶやきToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -251,6 +252,7 @@
             this.今日は何月何日ToolStripMenuItem,
             this.こんにちはToolStripMenuItem,
             this.toolStripMenuItem2,
+            this.オフラインつぶやきToolStripMenuItem,
             this.ライセンスToolStripMenuItem});
             this.コードToolStripMenuItem.Name = "コードToolStripMenuItem";
             this.コードToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
@@ -269,6 +271,13 @@
             this.こんにちはToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
             this.こんにちはToolStripMenuItem.Text = "こんにちは、世界";
             this.こんにちはToolStripMenuItem.Click += new System.EventHandler(this.こんにちはToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(207, 30);
+            this.toolStripMenuItem2.Text = "= 1+2";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // ライセンスToolStripMenuItem
             // 
@@ -446,12 +455,12 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripMenuItem2
+            // オフラインつぶやきToolStripMenuItem
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(207, 30);
-            this.toolStripMenuItem2.Text = "= 1+2";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            this.オフラインつぶやきToolStripMenuItem.Name = "オフラインつぶやきToolStripMenuItem";
+            this.オフラインつぶやきToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
+            this.オフラインつぶやきToolStripMenuItem.Text = "オフラインつぶやき";
+            this.オフラインつぶやきToolStripMenuItem.Click += new System.EventHandler(this.オフラインつぶやきToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -524,6 +533,7 @@
         private System.Windows.Forms.ToolStripMenuItem ライセンスToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem こんにちはToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem オフラインつぶやきToolStripMenuItem;
     }
 }
 
