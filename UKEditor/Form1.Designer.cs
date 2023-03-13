@@ -49,9 +49,9 @@
             this.印刷プレビューToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.印刷ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.コードToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.今日は何月何日ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.こんにちはToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.足し算12ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.日めくりSharpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.日めくり2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ライセンスToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.その他ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ストップウオッチToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,6 +74,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.ハローワールドToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -248,39 +249,40 @@
             // コードToolStripMenuItem
             // 
             this.コードToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.今日は何月何日ToolStripMenuItem,
-            this.こんにちはToolStripMenuItem,
-            this.toolStripMenuItem2,
+            this.ハローワールドToolStripMenuItem,
+            this.足し算12ToolStripMenuItem,
+            this.日めくりSharpToolStripMenuItem,
+            this.日めくり2ToolStripMenuItem,
             this.ライセンスToolStripMenuItem});
             this.コードToolStripMenuItem.Name = "コードToolStripMenuItem";
             this.コードToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
             this.コードToolStripMenuItem.Text = "コード";
             // 
-            // 今日は何月何日ToolStripMenuItem
+            // 足し算12ToolStripMenuItem
             // 
-            this.今日は何月何日ToolStripMenuItem.Name = "今日は何月何日ToolStripMenuItem";
-            this.今日は何月何日ToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
-            this.今日は何月何日ToolStripMenuItem.Text = "今日は何月何日";
-            this.今日は何月何日ToolStripMenuItem.Click += new System.EventHandler(this.今日は何月何日ToolStripMenuItem_Click);
+            this.足し算12ToolStripMenuItem.Name = "足し算12ToolStripMenuItem";
+            this.足し算12ToolStripMenuItem.Size = new System.Drawing.Size(187, 30);
+            this.足し算12ToolStripMenuItem.Text = "足し算(=1+2)";
+            this.足し算12ToolStripMenuItem.Click += new System.EventHandler(this.足し算12ToolStripMenuItem_Click);
             // 
-            // こんにちはToolStripMenuItem
+            // 日めくりSharpToolStripMenuItem
             // 
-            this.こんにちはToolStripMenuItem.Name = "こんにちはToolStripMenuItem";
-            this.こんにちはToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
-            this.こんにちはToolStripMenuItem.Text = "こんにちは、世界";
-            this.こんにちはToolStripMenuItem.Click += new System.EventHandler(this.こんにちはToolStripMenuItem_Click);
+            this.日めくりSharpToolStripMenuItem.Name = "日めくりSharpToolStripMenuItem";
+            this.日めくりSharpToolStripMenuItem.Size = new System.Drawing.Size(187, 30);
+            this.日めくりSharpToolStripMenuItem.Text = "日めくりSharp";
+            this.日めくりSharpToolStripMenuItem.Click += new System.EventHandler(this.日めくりSharpToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem2
+            // 日めくり2ToolStripMenuItem
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(207, 30);
-            this.toolStripMenuItem2.Text = "= 1+2";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            this.日めくり2ToolStripMenuItem.Name = "日めくり2ToolStripMenuItem";
+            this.日めくり2ToolStripMenuItem.Size = new System.Drawing.Size(187, 30);
+            this.日めくり2ToolStripMenuItem.Text = "日めくり2";
+            this.日めくり2ToolStripMenuItem.Click += new System.EventHandler(this.日めくり2ToolStripMenuItem_Click);
             // 
             // ライセンスToolStripMenuItem
             // 
             this.ライセンスToolStripMenuItem.Name = "ライセンスToolStripMenuItem";
-            this.ライセンスToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
+            this.ライセンスToolStripMenuItem.Size = new System.Drawing.Size(187, 30);
             this.ライセンスToolStripMenuItem.Text = "ライセンス";
             this.ライセンスToolStripMenuItem.Click += new System.EventHandler(this.ライセンスToolStripMenuItem_Click);
             // 
@@ -453,6 +455,13 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // ハローワールドToolStripMenuItem
+            // 
+            this.ハローワールドToolStripMenuItem.Name = "ハローワールドToolStripMenuItem";
+            this.ハローワールドToolStripMenuItem.Size = new System.Drawing.Size(187, 30);
+            this.ハローワールドToolStripMenuItem.Text = "ハローワールド";
+            this.ハローワールドToolStripMenuItem.Click += new System.EventHandler(this.ハローワールドToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
@@ -520,10 +529,11 @@
         private System.Windows.Forms.ToolStripMenuItem powerShell実行保存ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ライセンスToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem コードToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 今日は何月何日ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ライセンスToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem こんにちはToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem 日めくり2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 日めくりSharpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 足し算12ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ハローワールドToolStripMenuItem;
     }
 }
 

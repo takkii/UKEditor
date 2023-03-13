@@ -514,12 +514,72 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS' AND 
             }
         }
 
-        private void 今日は何月何日ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ライセンスToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String UK_li = @"
+echo '
+「コード内機能のライセンス」
+
+※ 移植先一覧(引用先)
+https://github.com/takkii/himekuri_shaper
+https://github.com/takkii/himekuri2
+
+The MIT License
+Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
+
+以下に定める条件に従い、本ソフトウェアおよび関連文書のファイル（以下「ソフトウェア」）の複製を取得するすべての人に対し、ソフトウェアを無制限に扱うことを無償で許可します。これには、ソフトウェアの複製を使用、複写、変更、結合、掲載、頒布、サブライセンス、および/または販売する権利、およびソフトウェアを提供する相手に同じことを許可する権利も無制限に含まれます。
+
+上記の著作権表示および本許諾表示を、ソフトウェアのすべての複製または重要な部分に記載するものとします。
+
+ソフトウェアは「現状のまま」で、明示であるか暗黙であるかを問わず、何らの保証もなく提供されます。ここでいう保証とは、商品性、特定の目的への適合性、および権利非侵害についての保証も含みますが、それに限定されるものではありません。 作者または著作権者は、契約行為、不法行為、またはそれ以外であろうと、ソフトウェアに起因または関連し、あるいはソフトウェアの使用またはその他の扱いによって生じる一切の請求、損害、その他の義務について何らの責任も負わないものとします。
+'
+";
+                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                Collection<PSObject> result = runspaceInvoke.Invoke(UK_li);
+                runspaceInvoke.Dispose();
+
+                foreach (PSObject result_str in result)
+                {
+                    textBox1.AppendText(result_str.ToString());
+                    textBox1.AppendText("\n");
+                }
+            }
+            catch (Exception cept)
+            {
+                MessageBox.Show(cept.Message, "エラーを捕捉しました。");
+            }
+        }
+
+        private void 日めくり2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String koyomi = "himekuri";
+                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                Collection<PSObject> result = runspaceInvoke.Invoke(koyomi);
+                runspaceInvoke.Dispose();
+
+                foreach (PSObject result_str in result)
+                {
+                    MessageBox.Show(result_str.ToString());
+                }
+            }
+            catch (Exception cept)
+            {
+                MessageBox.Show(cept.Message, "gem install himekuri2 ... 実行してください！");
+            }
+        }
+
+        private void 日めくりSharpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
                 // 宣言
-                var dt = DateTime.Now;           
+                var dt = DateTime.Now;
                 const string reiwa_kanji = "令和";
                 const string reiwa_alpha = "R0";
                 const string OneYear = "年";
@@ -546,7 +606,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS' AND 
                 var nengo = (dt.Year + OneYear + dt.Month + OneMonth + dt.Day + Onedays + koron + dt.Hour + OneHour + dt.Minute + OneMinutes +
                              dt.Second + OneMinutes + " : " + dt.ToString("dddd"));
                 var hagoita = reiwa + " : " + reiwa2;
-                var oshogatsu = next_year + (gantan - 1) + message ;
+                var oshogatsu = next_year + (gantan - 1) + message;
 
                 // 安定ソート
                 var takoage = new[]
@@ -557,7 +617,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS' AND 
                 };
 
                 var orderByList = takoage.OrderBy(x => x);
-                foreach (var x in orderByList )
+                foreach (var x in orderByList)
                 {
                     MessageBox.Show(x);
                 }
@@ -597,45 +657,28 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS' AND 
             }
         }
 
-        private void ライセンスToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 足し算12ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                String UK_li = @"
-echo '
-「メニュー側コード内機能、例えば今日は何月何日などが対象のライセンス」
-
-※ 移植先一覧(引用先)
-https://github.com/takkii/himekuri_shaper
-
-The MIT License
-Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
-
-以下に定める条件に従い、本ソフトウェアおよび関連文書のファイル（以下「ソフトウェア」）の複製を取得するすべての人に対し、ソフトウェアを無制限に扱うことを無償で許可します。これには、ソフトウェアの複製を使用、複写、変更、結合、掲載、頒布、サブライセンス、および/または販売する権利、およびソフトウェアを提供する相手に同じことを許可する権利も無制限に含まれます。
-
-上記の著作権表示および本許諾表示を、ソフトウェアのすべての複製または重要な部分に記載するものとします。
-
-ソフトウェアは「現状のまま」で、明示であるか暗黙であるかを問わず、何らの保証もなく提供されます。ここでいう保証とは、商品性、特定の目的への適合性、および権利非侵害についての保証も含みますが、それに限定されるものではありません。 作者または著作権者は、契約行為、不法行為、またはそれ以外であろうと、ソフトウェアに起因または関連し、あるいはソフトウェアの使用またはその他の扱いによって生じる一切の請求、損害、その他の義務について何らの責任も負わないものとします。
-'
-";
+                String one_two = "ruby -e 'puts 1+2'";
                 RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
 
-                Collection<PSObject> result = runspaceInvoke.Invoke(UK_li);
+                Collection<PSObject> result = runspaceInvoke.Invoke(one_two);
                 runspaceInvoke.Dispose();
 
                 foreach (PSObject result_str in result)
                 {
-                    textBox1.AppendText(result_str.ToString());
-                    textBox1.AppendText("\n");
+                    MessageBox.Show(result_str.ToString());
                 }
             }
             catch (Exception cept)
             {
-                MessageBox.Show(cept.Message, "エラーを捕捉しました。");
+                MessageBox.Show(cept.Message, "RubyにPATHを通してください。");
             }
         }
 
-        private void こんにちはToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ハローワールドToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -687,27 +730,6 @@ Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
                 {
                     MessageBox.Show(ex.Message, "エラーを捕捉しました。");
                 }
-            }
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                String one_two = "ruby -e 'puts 1+2'";
-                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
-
-                Collection<PSObject> result = runspaceInvoke.Invoke(one_two);
-                runspaceInvoke.Dispose();
-
-                foreach (PSObject result_str in result)
-                {
-                    MessageBox.Show(result_str.ToString());
-                }
-            }
-            catch (Exception cept)
-            {
-                MessageBox.Show(cept.Message, "RubyにPATHを通してください。");
             }
         }
     }
