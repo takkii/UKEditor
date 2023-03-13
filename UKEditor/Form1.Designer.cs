@@ -74,7 +74,6 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.オフラインつぶやきToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -252,7 +251,6 @@
             this.今日は何月何日ToolStripMenuItem,
             this.こんにちはToolStripMenuItem,
             this.toolStripMenuItem2,
-            this.オフラインつぶやきToolStripMenuItem,
             this.ライセンスToolStripMenuItem});
             this.コードToolStripMenuItem.Name = "コードToolStripMenuItem";
             this.コードToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
@@ -455,13 +453,6 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // オフラインつぶやきToolStripMenuItem
-            // 
-            this.オフラインつぶやきToolStripMenuItem.Name = "オフラインつぶやきToolStripMenuItem";
-            this.オフラインつぶやきToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
-            this.オフラインつぶやきToolStripMenuItem.Text = "オフラインつぶやき";
-            this.オフラインつぶやきToolStripMenuItem.Click += new System.EventHandler(this.オフラインつぶやきToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
@@ -533,7 +524,6 @@
         private System.Windows.Forms.ToolStripMenuItem ライセンスToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem こんにちはToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem オフラインつぶやきToolStripMenuItem;
     }
 }
 
