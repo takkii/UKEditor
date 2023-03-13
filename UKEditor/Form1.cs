@@ -405,7 +405,7 @@ namespace UKEditor
                 foreach (PSObject result_str in result)
                 {
                     textBox1.AppendText(result_str.ToString());
-                    textBox1.AppendText("\n");
+                    textBox1.AppendText("\r\n");
                 }
             }
             catch (Exception cept)
@@ -442,7 +442,7 @@ namespace UKEditor
                 foreach (PSObject result_str in save_result)
                 {
                     textBox1.AppendText(result_str.ToString());
-                    textBox1.AppendText("\n");
+                    textBox1.AppendText("\r\n");
                 }
             }
             catch (Exception cept)
@@ -505,7 +505,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS' AND 
                 foreach (PSObject result_str in result)
                 {
                     textBox1.AppendText(result_str.ToString());
-                    textBox1.AppendText("\n");
+                    textBox1.AppendText("\r\n");
                 }
             }
             catch (Exception cept)
@@ -544,7 +544,7 @@ Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
                 foreach (PSObject result_str in result)
                 {
                     textBox1.AppendText(result_str.ToString());
-                    textBox1.AppendText("\n");
+                    textBox1.AppendText("\r\n");
                 }
             }
             catch (Exception cept)
