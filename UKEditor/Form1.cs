@@ -710,5 +710,26 @@ Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
                 MessageBox.Show(cept.Message, "RubyにPATHを通してください。");
             }
         }
+
+        private void オフラインつぶやきToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String one_two = "engine -e";
+                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                Collection<PSObject> result = runspaceInvoke.Invoke(one_two);
+                runspaceInvoke.Dispose();
+
+                foreach (PSObject result_str in result)
+                {
+                    MessageBox.Show(result_str.ToString());
+                }
+            }
+            catch (Exception cept)
+            {
+                MessageBox.Show(cept.Message, "RubyGemsでzinbeijettとtkを入れてください。");
+            }
+        }
     }
 }
