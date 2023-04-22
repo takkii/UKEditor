@@ -309,32 +309,12 @@ namespace UKEditor
 
         private void ストップウオッチToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.ストップウオッチToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Tab;
-                Form3 d = new Form3();
-                d.ShowDialog(this);
-                d.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "エラーを捕捉しました");
-            }
+            
         }
 
         private void デジタルタイマーToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.デジタルタイマーToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F1;
-                Form d = new Form4();
-                d.ShowDialog(this);
-                d.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "エラーを捕捉しました");
-            }
+
         }
 
         private void 上書き保存ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -730,6 +710,34 @@ Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
                 {
                     MessageBox.Show(ex.Message, "エラーを捕捉しました。");
                 }
+            }
+        }
+
+        private void ストップウォッチToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Form3 d = new Form3();
+                d.ShowDialog(this);
+                d.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "エラーを捕捉しました");
+            }
+        }
+
+        private void デジタルタイマーToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Form d = new Form4();
+                d.ShowDialog(this);
+                d.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "エラーを捕捉しました");
             }
         }
     }

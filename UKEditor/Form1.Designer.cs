@@ -49,13 +49,12 @@
             this.印刷プレビューToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.印刷ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.コードToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ハローワールドToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.足し算12ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.日めくりSharpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.日めくり2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ライセンスToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.その他ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ストップウオッチToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.デジタルタイマーToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.powerShellを起動純正ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.powerShellToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.powerShellを実行ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,7 +73,8 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.ハローワールドToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ストップウォッチToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.デジタルタイマーToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -253,44 +253,51 @@
             this.足し算12ToolStripMenuItem,
             this.日めくりSharpToolStripMenuItem,
             this.日めくり2ToolStripMenuItem,
+            this.ストップウォッチToolStripMenuItem,
+            this.デジタルタイマーToolStripMenuItem1,
             this.ライセンスToolStripMenuItem});
             this.コードToolStripMenuItem.Name = "コードToolStripMenuItem";
             this.コードToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
             this.コードToolStripMenuItem.Text = "コード";
             // 
+            // ハローワールドToolStripMenuItem
+            // 
+            this.ハローワールドToolStripMenuItem.Name = "ハローワールドToolStripMenuItem";
+            this.ハローワールドToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
+            this.ハローワールドToolStripMenuItem.Text = "ハローワールド";
+            this.ハローワールドToolStripMenuItem.Click += new System.EventHandler(this.ハローワールドToolStripMenuItem_Click);
+            // 
             // 足し算12ToolStripMenuItem
             // 
             this.足し算12ToolStripMenuItem.Name = "足し算12ToolStripMenuItem";
-            this.足し算12ToolStripMenuItem.Size = new System.Drawing.Size(187, 30);
+            this.足し算12ToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
             this.足し算12ToolStripMenuItem.Text = "足し算(=1+2)";
             this.足し算12ToolStripMenuItem.Click += new System.EventHandler(this.足し算12ToolStripMenuItem_Click);
             // 
             // 日めくりSharpToolStripMenuItem
             // 
             this.日めくりSharpToolStripMenuItem.Name = "日めくりSharpToolStripMenuItem";
-            this.日めくりSharpToolStripMenuItem.Size = new System.Drawing.Size(187, 30);
+            this.日めくりSharpToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
             this.日めくりSharpToolStripMenuItem.Text = "日めくりSharp";
             this.日めくりSharpToolStripMenuItem.Click += new System.EventHandler(this.日めくりSharpToolStripMenuItem_Click);
             // 
             // 日めくり2ToolStripMenuItem
             // 
             this.日めくり2ToolStripMenuItem.Name = "日めくり2ToolStripMenuItem";
-            this.日めくり2ToolStripMenuItem.Size = new System.Drawing.Size(187, 30);
+            this.日めくり2ToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
             this.日めくり2ToolStripMenuItem.Text = "日めくり2";
             this.日めくり2ToolStripMenuItem.Click += new System.EventHandler(this.日めくり2ToolStripMenuItem_Click);
             // 
             // ライセンスToolStripMenuItem
             // 
             this.ライセンスToolStripMenuItem.Name = "ライセンスToolStripMenuItem";
-            this.ライセンスToolStripMenuItem.Size = new System.Drawing.Size(187, 30);
+            this.ライセンスToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
             this.ライセンスToolStripMenuItem.Text = "ライセンス";
             this.ライセンスToolStripMenuItem.Click += new System.EventHandler(this.ライセンスToolStripMenuItem_Click);
             // 
             // その他ToolStripMenuItem
             // 
             this.その他ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ストップウオッチToolStripMenuItem,
-            this.デジタルタイマーToolStripMenuItem,
             this.powerShellを起動純正ToolStripMenuItem,
             this.powerShellToolStripMenuItem,
             this.powerShellを実行ToolStripMenuItem,
@@ -300,22 +307,6 @@
             this.その他ToolStripMenuItem.Name = "その他ToolStripMenuItem";
             this.その他ToolStripMenuItem.Size = new System.Drawing.Size(70, 29);
             this.その他ToolStripMenuItem.Text = "その他";
-            // 
-            // ストップウオッチToolStripMenuItem
-            // 
-            this.ストップウオッチToolStripMenuItem.Name = "ストップウオッチToolStripMenuItem";
-            this.ストップウオッチToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Tab)));
-            this.ストップウオッチToolStripMenuItem.Size = new System.Drawing.Size(327, 30);
-            this.ストップウオッチToolStripMenuItem.Text = "ストップウオッチ";
-            this.ストップウオッチToolStripMenuItem.Click += new System.EventHandler(this.ストップウオッチToolStripMenuItem_Click);
-            // 
-            // デジタルタイマーToolStripMenuItem
-            // 
-            this.デジタルタイマーToolStripMenuItem.Name = "デジタルタイマーToolStripMenuItem";
-            this.デジタルタイマーToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
-            this.デジタルタイマーToolStripMenuItem.Size = new System.Drawing.Size(327, 30);
-            this.デジタルタイマーToolStripMenuItem.Text = "デジタルタイマー";
-            this.デジタルタイマーToolStripMenuItem.Click += new System.EventHandler(this.デジタルタイマーToolStripMenuItem_Click);
             // 
             // powerShellを起動純正ToolStripMenuItem
             // 
@@ -455,12 +446,19 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // ハローワールドToolStripMenuItem
+            // ストップウォッチToolStripMenuItem
             // 
-            this.ハローワールドToolStripMenuItem.Name = "ハローワールドToolStripMenuItem";
-            this.ハローワールドToolStripMenuItem.Size = new System.Drawing.Size(187, 30);
-            this.ハローワールドToolStripMenuItem.Text = "ハローワールド";
-            this.ハローワールドToolStripMenuItem.Click += new System.EventHandler(this.ハローワールドToolStripMenuItem_Click);
+            this.ストップウォッチToolStripMenuItem.Name = "ストップウォッチToolStripMenuItem";
+            this.ストップウォッチToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
+            this.ストップウォッチToolStripMenuItem.Text = "ストップウォッチ";
+            this.ストップウォッチToolStripMenuItem.Click += new System.EventHandler(this.ストップウォッチToolStripMenuItem_Click);
+            // 
+            // デジタルタイマーToolStripMenuItem1
+            // 
+            this.デジタルタイマーToolStripMenuItem1.Name = "デジタルタイマーToolStripMenuItem1";
+            this.デジタルタイマーToolStripMenuItem1.Size = new System.Drawing.Size(194, 30);
+            this.デジタルタイマーToolStripMenuItem1.Text = "デジタルタイマー";
+            this.デジタルタイマーToolStripMenuItem1.Click += new System.EventHandler(this.デジタルタイマーToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -516,8 +514,6 @@
         private System.Windows.Forms.ToolStripMenuItem 著作者情報ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 検索ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem その他ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ストップウオッチToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem デジタルタイマーToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripMenuItem 上書き保存ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem powerShellToolStripMenuItem;
@@ -534,6 +530,8 @@
         private System.Windows.Forms.ToolStripMenuItem 日めくりSharpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 足し算12ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ハローワールドToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ストップウォッチToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem デジタルタイマーToolStripMenuItem1;
     }
 }
 
