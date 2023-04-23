@@ -740,5 +740,26 @@ Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
                 MessageBox.Show(ex.Message, "エラーを捕捉しました");
             }
         }
+
+        private void 日めくりLuaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String lua_hello = "lua hello_sjis.lua";
+                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                Collection<PSObject> result = runspaceInvoke.Invoke(lua_hello);
+                runspaceInvoke.Dispose();
+
+                foreach (PSObject result_str in result)
+                {
+                    MessageBox.Show(result_str.ToString());
+                }
+            }
+            catch (Exception cept)
+            {
+                MessageBox.Show(cept.Message, "Please Install, lua Lang.");
+            }
+        }
     }
 }
