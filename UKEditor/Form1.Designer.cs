@@ -75,6 +75,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.日めくりLuaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -253,6 +254,7 @@
             this.足し算12ToolStripMenuItem,
             this.日めくりSharpToolStripMenuItem,
             this.日めくり2ToolStripMenuItem,
+            this.日めくりLuaToolStripMenuItem,
             this.ストップウォッチToolStripMenuItem,
             this.デジタルタイマーToolStripMenuItem1,
             this.ライセンスToolStripMenuItem});
@@ -342,7 +344,7 @@
             // 
             this.powerShellを実行ToolStripMenuItem.Name = "powerShellを実行ToolStripMenuItem";
             this.powerShellを実行ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.powerShellを実行ToolStripMenuItem.Size = new System.Drawing.Size(327, 30);
+            this.powerShellを実行ToolStripMenuItem.Size = new System.Drawing.Size(347, 30);
             this.powerShellを実行ToolStripMenuItem.Text = "PowerShell環境";
             this.powerShellを実行ToolStripMenuItem.Click += new System.EventHandler(this.powerShellを実行ToolStripMenuItem_Click);
             // 
@@ -350,7 +352,7 @@
             // 
             this.スクリプトを実行ToolStripMenuItem.Name = "スクリプトを実行ToolStripMenuItem";
             this.スクリプトを実行ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
-            this.スクリプトを実行ToolStripMenuItem.Size = new System.Drawing.Size(327, 30);
+            this.スクリプトを実行ToolStripMenuItem.Size = new System.Drawing.Size(347, 30);
             this.スクリプトを実行ToolStripMenuItem.Text = "PowerShell実行(開く)";
             this.スクリプトを実行ToolStripMenuItem.Click += new System.EventHandler(this.スクリプトを実行ToolStripMenuItem_Click);
             // 
@@ -358,7 +360,7 @@
             // 
             this.powerShell実行保存ToolStripMenuItem.Name = "powerShell実行保存ToolStripMenuItem";
             this.powerShell実行保存ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
-            this.powerShell実行保存ToolStripMenuItem.Size = new System.Drawing.Size(327, 30);
+            this.powerShell実行保存ToolStripMenuItem.Size = new System.Drawing.Size(347, 30);
             this.powerShell実行保存ToolStripMenuItem.Text = "PowerShell実行(保存)";
             this.powerShell実行保存ToolStripMenuItem.Click += new System.EventHandler(this.powerShell実行保存ToolStripMenuItem_Click);
             // 
@@ -366,7 +368,7 @@
             // 
             this.設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
             this.設定ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.設定ToolStripMenuItem.Size = new System.Drawing.Size(327, 30);
+            this.設定ToolStripMenuItem.Size = new System.Drawing.Size(347, 30);
             this.設定ToolStripMenuItem.Text = "設定";
             this.設定ToolStripMenuItem.Click += new System.EventHandler(this.設定ToolStripMenuItem_Click);
             // 
@@ -460,6 +462,13 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // 日めくりLuaToolStripMenuItem
+            // 
+            this.日めくりLuaToolStripMenuItem.Name = "日めくりLuaToolStripMenuItem";
+            this.日めくりLuaToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
+            this.日めくりLuaToolStripMenuItem.Text = "日めくりLua";
+            this.日めくりLuaToolStripMenuItem.Click += new System.EventHandler(this.日めくりLuaToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
@@ -532,6 +541,7 @@
         private System.Windows.Forms.ToolStripMenuItem ハローワールドToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ストップウォッチToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem デジタルタイマーToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 日めくりLuaToolStripMenuItem;
     }
 }
 
