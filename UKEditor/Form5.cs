@@ -40,19 +40,25 @@ namespace UKEditor
 
         private void 名前を付けて保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.saveFileDialog1.Title = "ファイルの選択";
-            this.saveFileDialog1.CheckFileExists = true;
-            this.saveFileDialog1.RestoreDirectory = true;
-            this.saveFileDialog1.Filter = "PowerShellファイル|*.ps1|テキストファイル|*.txt|すべてのファイル|*.*";
-
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                FileName = saveFileDialog1.FileName;
-                StreamWriter writer = new StreamWriter(FileName, false, Encoding.GetEncoding("UTF-8"));
-                writer.Write(richTextBox1.Text);
-                writer.Close();
-                Text = Path.GetFileName(FileName) + " - PowerShellBox";
-                上書き保存ToolStripMenuItem.Enabled = true;
+                this.saveFileDialog1.Title = "ファイルの選択";
+                this.saveFileDialog1.RestoreDirectory = true;
+                this.saveFileDialog1.Filter = "PowerShellファイル|*.ps1|テキストファイル|*.txt|すべてのファイル|*.*";
+
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    FileName = saveFileDialog1.FileName;
+                    StreamWriter writer = new StreamWriter(FileName, false, Encoding.GetEncoding("UTF-8"));
+                    writer.Write(textBox1.Text);
+                    writer.Close();
+                    Text = Path.GetFileName(FileName) + " - PowerShellBox";
+                    上書き保存ToolStripMenuItem.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "エラーを捕捉しました");
             }
         }
 
@@ -138,6 +144,32 @@ namespace UKEditor
                 {
                     richTextBox1.AppendText(result_str.ToString());
                     richTextBox1.AppendText("\n");
+                }
+            }
+            catch (Exception cept)
+            {
+                MessageBox.Show(cept.Message, "エラーを捕捉しました。");
+            }
+        }
+
+        private void 実行保存ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamReader save_reader = new StreamReader(saveFileDialog1.FileName, Encoding.GetEncoding("UTF-8"));
+                String save_text_area = save_reader.ReadToEnd();
+                string save_filepath = save_text_area;
+                save_reader.Close();
+
+                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                Collection<PSObject> save_result = runspaceInvoke.Invoke(save_filepath);
+                runspaceInvoke.Dispose();
+
+                foreach (PSObject result_str in save_result)
+                {
+                    richTextBox1.AppendText(result_str.ToString());
+                    richTextBox1.AppendText("\r\n");
                 }
             }
             catch (Exception cept)
