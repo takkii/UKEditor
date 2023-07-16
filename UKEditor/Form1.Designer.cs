@@ -53,6 +53,7 @@
             this.足し算12ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.日めくりSharpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.日めくり2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.日めくりLuaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ストップウォッチToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.デジタルタイマーToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ライセンスToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +76,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.日めくりLuaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ひなどりToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -255,6 +256,7 @@
             this.日めくりSharpToolStripMenuItem,
             this.日めくり2ToolStripMenuItem,
             this.日めくりLuaToolStripMenuItem,
+            this.ひなどりToolStripMenuItem,
             this.ストップウォッチToolStripMenuItem,
             this.デジタルタイマーToolStripMenuItem1,
             this.ライセンスToolStripMenuItem});
@@ -289,6 +291,13 @@
             this.日めくり2ToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
             this.日めくり2ToolStripMenuItem.Text = "日めくり2";
             this.日めくり2ToolStripMenuItem.Click += new System.EventHandler(this.日めくり2ToolStripMenuItem_Click);
+            // 
+            // 日めくりLuaToolStripMenuItem
+            // 
+            this.日めくりLuaToolStripMenuItem.Name = "日めくりLuaToolStripMenuItem";
+            this.日めくりLuaToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
+            this.日めくりLuaToolStripMenuItem.Text = "日めくりLua";
+            this.日めくりLuaToolStripMenuItem.Click += new System.EventHandler(this.日めくりLuaToolStripMenuItem_Click);
             // 
             // ストップウォッチToolStripMenuItem
             // 
@@ -462,12 +471,12 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // 日めくりLuaToolStripMenuItem
+            // ひなどりToolStripMenuItem
             // 
-            this.日めくりLuaToolStripMenuItem.Name = "日めくりLuaToolStripMenuItem";
-            this.日めくりLuaToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
-            this.日めくりLuaToolStripMenuItem.Text = "日めくりLua";
-            this.日めくりLuaToolStripMenuItem.Click += new System.EventHandler(this.日めくりLuaToolStripMenuItem_Click);
+            this.ひなどりToolStripMenuItem.Name = "ひなどりToolStripMenuItem";
+            this.ひなどりToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
+            this.ひなどりToolStripMenuItem.Text = "ひなどり";
+            this.ひなどりToolStripMenuItem.Click += new System.EventHandler(this.ひなどりToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -542,6 +551,7 @@
         private System.Windows.Forms.ToolStripMenuItem ストップウォッチToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem デジタルタイマーToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 日めくりLuaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ひなどりToolStripMenuItem;
     }
 }
 
