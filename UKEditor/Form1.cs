@@ -782,5 +782,26 @@ Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
                 MessageBox.Show(cept.Message, "hinadori.exeのPATHを確認してください。");
             }
         }
+
+        private void 旧ひなどりToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String hinadori = "./hinadori_2008.exe";
+                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                Collection<PSObject> result = runspaceInvoke.Invoke(hinadori);
+                runspaceInvoke.Dispose();
+
+                foreach (PSObject result_str in result)
+                {
+                    MessageBox.Show(result_str.ToString());
+                }
+            }
+            catch (Exception cept)
+            {
+                MessageBox.Show(cept.Message, "hinadori.exeのPATHを確認してください。");
+            }
+        }
     }
 }
