@@ -808,7 +808,7 @@ Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
         {
             try
             {
-                String hinadori = "git pull origin main";
+                String hinadori = "git pull";
                 RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
 
                 Collection<PSObject> result = runspaceInvoke.Invoke(hinadori);
