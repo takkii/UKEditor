@@ -54,6 +54,7 @@
             this.日めくりSharpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.日めくり2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.日めくりLuaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.旧ひなどりToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ひなどりToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ストップウォッチToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.デジタルタイマーToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,7 +78,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.旧ひなどりToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uKEditorの更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -301,6 +302,13 @@
             this.日めくりLuaToolStripMenuItem.Text = "日めくりLua";
             this.日めくりLuaToolStripMenuItem.Click += new System.EventHandler(this.日めくりLuaToolStripMenuItem_Click);
             // 
+            // 旧ひなどりToolStripMenuItem
+            // 
+            this.旧ひなどりToolStripMenuItem.Name = "旧ひなどりToolStripMenuItem";
+            this.旧ひなどりToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
+            this.旧ひなどりToolStripMenuItem.Text = "旧ひなどり";
+            this.旧ひなどりToolStripMenuItem.Click += new System.EventHandler(this.旧ひなどりToolStripMenuItem_Click);
+            // 
             // ひなどりToolStripMenuItem
             // 
             this.ひなどりToolStripMenuItem.Name = "ひなどりToolStripMenuItem";
@@ -395,7 +403,8 @@
             this.ヘルプToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ヘルプToolStripMenuItem1,
             this.著作者情報ToolStripMenuItem,
-            this.ライセンスToolStripMenuItem1});
+            this.ライセンスToolStripMenuItem1,
+            this.uKEditorの更新ToolStripMenuItem});
             this.ヘルプToolStripMenuItem.Name = "ヘルプToolStripMenuItem";
             this.ヘルプToolStripMenuItem.Size = new System.Drawing.Size(68, 29);
             this.ヘルプToolStripMenuItem.Text = "ヘルプ";
@@ -480,12 +489,12 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // 旧ひなどりToolStripMenuItem
+            // uKEditorの更新ToolStripMenuItem
             // 
-            this.旧ひなどりToolStripMenuItem.Name = "旧ひなどりToolStripMenuItem";
-            this.旧ひなどりToolStripMenuItem.Size = new System.Drawing.Size(194, 30);
-            this.旧ひなどりToolStripMenuItem.Text = "旧ひなどり";
-            this.旧ひなどりToolStripMenuItem.Click += new System.EventHandler(this.旧ひなどりToolStripMenuItem_Click);
+            this.uKEditorの更新ToolStripMenuItem.Name = "uKEditorの更新ToolStripMenuItem";
+            this.uKEditorの更新ToolStripMenuItem.Size = new System.Drawing.Size(294, 30);
+            this.uKEditorの更新ToolStripMenuItem.Text = "UKEditorの更新";
+            this.uKEditorの更新ToolStripMenuItem.Click += new System.EventHandler(this.uKEditorの更新ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -562,6 +571,7 @@
         private System.Windows.Forms.ToolStripMenuItem 日めくりLuaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ひなどりToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 旧ひなどりToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uKEditorの更新ToolStripMenuItem;
     }
 }
 
