@@ -78,7 +78,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.uKEditorの更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.現在のバージョンToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -402,9 +402,9 @@
             // 
             this.ヘルプToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ヘルプToolStripMenuItem1,
+            this.現在のバージョンToolStripMenuItem,
             this.著作者情報ToolStripMenuItem,
-            this.ライセンスToolStripMenuItem1,
-            this.uKEditorの更新ToolStripMenuItem});
+            this.ライセンスToolStripMenuItem1});
             this.ヘルプToolStripMenuItem.Name = "ヘルプToolStripMenuItem";
             this.ヘルプToolStripMenuItem.Size = new System.Drawing.Size(68, 29);
             this.ヘルプToolStripMenuItem.Text = "ヘルプ";
@@ -489,12 +489,12 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // uKEditorの更新ToolStripMenuItem
+            // 現在のバージョンToolStripMenuItem
             // 
-            this.uKEditorの更新ToolStripMenuItem.Name = "uKEditorの更新ToolStripMenuItem";
-            this.uKEditorの更新ToolStripMenuItem.Size = new System.Drawing.Size(294, 30);
-            this.uKEditorの更新ToolStripMenuItem.Text = "UKEditorの更新";
-            this.uKEditorの更新ToolStripMenuItem.Click += new System.EventHandler(this.uKEditorの更新ToolStripMenuItem_Click);
+            this.現在のバージョンToolStripMenuItem.Name = "現在のバージョンToolStripMenuItem";
+            this.現在のバージョンToolStripMenuItem.Size = new System.Drawing.Size(294, 30);
+            this.現在のバージョンToolStripMenuItem.Text = "現在のバージョン";
+            this.現在のバージョンToolStripMenuItem.Click += new System.EventHandler(this.現在のバージョンToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -571,7 +571,7 @@
         private System.Windows.Forms.ToolStripMenuItem 日めくりLuaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ひなどりToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 旧ひなどりToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem uKEditorの更新ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 現在のバージョンToolStripMenuItem;
     }
 }
 
