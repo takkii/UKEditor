@@ -839,5 +839,26 @@ Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
                 MessageBox.Show(cept.Message, "アセンブリと最新のバージョンを確認してください！");
             }
         }
+
+        private void gToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String git_pull = "git pull";
+                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+
+                Collection<PSObject> result = runspaceInvoke.Invoke(git_pull);
+                runspaceInvoke.Dispose();
+
+                foreach (PSObject result_str in result)
+                {
+                    MessageBox.Show(result_str.ToString());
+                }
+            }
+            catch (Exception cept)
+            {
+                MessageBox.Show(cept.Message, "メッセージを確認後、対処してください！");
+            }
+        }
     }
 }
