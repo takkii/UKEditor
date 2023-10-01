@@ -8,6 +8,7 @@ using System.Linq;
 using System.Management.Automation;
 using System.Text;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace UKEditor
 {
@@ -804,24 +805,38 @@ Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
             }
         }
 
-        private void uKEditorの更新ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 現在のバージョンToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                String hinadori = "git pull";
-                RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+                // 最新のバージョン
+                String stable = "1.0.3.10";
 
-                Collection<PSObject> result = runspaceInvoke.Invoke(hinadori);
-                runspaceInvoke.Dispose();
+                // アセンブリバージョン
+                Assembly asm = Assembly.GetExecutingAssembly();
+                Version asm_VERSION = asm.GetName().Version;
 
-                foreach (PSObject result_str in result)
+                // System.VERSIONを文字列へ変換
+                String asm_ver = asm_VERSION.ToString();
+
+                // 最新とアセンブリのバージョンを比較
+                if (stable == asm_ver)
                 {
-                    MessageBox.Show(result_str.ToString());
+                    String VERSION = "最新と一致しています : " + asm_VERSION;
+
+                    MessageBox.Show(VERSION);
+                }
+                else
+                {
+
+                    String VERSION = "最新 : " + stable + "\n\n" + "アセンブリ : " + asm_ver + "\n\n" + "最新と一致していません!";
+
+                    MessageBox.Show(VERSION);
                 }
             }
             catch (Exception cept)
             {
-                MessageBox.Show(cept.Message, "hinadori.exeのPATHを確認してください。");
+                MessageBox.Show(cept.Message, "アセンブリと最新のバージョンを確認してください！");
             }
         }
     }
