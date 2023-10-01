@@ -68,6 +68,7 @@
             this.設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ヘルプToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ヘルプToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.現在のバージョンToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.著作者情報ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ライセンスToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -78,7 +79,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.現在のバージョンToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -403,6 +404,7 @@
             this.ヘルプToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ヘルプToolStripMenuItem1,
             this.現在のバージョンToolStripMenuItem,
+            this.gToolStripMenuItem,
             this.著作者情報ToolStripMenuItem,
             this.ライセンスToolStripMenuItem1});
             this.ヘルプToolStripMenuItem.Name = "ヘルプToolStripMenuItem";
@@ -416,6 +418,13 @@
             this.ヘルプToolStripMenuItem1.Size = new System.Drawing.Size(294, 30);
             this.ヘルプToolStripMenuItem1.Text = "ヘルプ";
             this.ヘルプToolStripMenuItem1.Click += new System.EventHandler(this.ヘルプToolStripMenuItem1_Click);
+            // 
+            // 現在のバージョンToolStripMenuItem
+            // 
+            this.現在のバージョンToolStripMenuItem.Name = "現在のバージョンToolStripMenuItem";
+            this.現在のバージョンToolStripMenuItem.Size = new System.Drawing.Size(294, 30);
+            this.現在のバージョンToolStripMenuItem.Text = "現在のバージョン";
+            this.現在のバージョンToolStripMenuItem.Click += new System.EventHandler(this.現在のバージョンToolStripMenuItem_Click);
             // 
             // 著作者情報ToolStripMenuItem
             // 
@@ -489,12 +498,12 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // 現在のバージョンToolStripMenuItem
+            // gToolStripMenuItem
             // 
-            this.現在のバージョンToolStripMenuItem.Name = "現在のバージョンToolStripMenuItem";
-            this.現在のバージョンToolStripMenuItem.Size = new System.Drawing.Size(294, 30);
-            this.現在のバージョンToolStripMenuItem.Text = "現在のバージョン";
-            this.現在のバージョンToolStripMenuItem.Click += new System.EventHandler(this.現在のバージョンToolStripMenuItem_Click);
+            this.gToolStripMenuItem.Name = "gToolStripMenuItem";
+            this.gToolStripMenuItem.Size = new System.Drawing.Size(294, 30);
+            this.gToolStripMenuItem.Text = "Gitを利用した更新";
+            this.gToolStripMenuItem.Click += new System.EventHandler(this.gToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -572,6 +581,7 @@
         private System.Windows.Forms.ToolStripMenuItem ひなどりToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 旧ひなどりToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 現在のバージョンToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gToolStripMenuItem;
     }
 }
 
