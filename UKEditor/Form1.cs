@@ -810,7 +810,7 @@ Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
             try
             {
                 // 最新のバージョン
-                String stable = "1.0.3.10";
+                String stable = "1.0.3.11";
 
                 // アセンブリバージョン
                 Assembly asm = Assembly.GetExecutingAssembly();
