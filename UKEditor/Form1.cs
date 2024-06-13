@@ -308,16 +308,6 @@ namespace UKEditor
             }
         }
 
-        private void ストップウオッチToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void デジタルタイマーToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void 上書き保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             File.WriteAllText(FileName, textBox1.Text, Encoding.GetEncoding("UTF-8"));     
@@ -327,10 +317,20 @@ namespace UKEditor
         {
             try
             {
-                Process cmd = new Process();
-                cmd.StartInfo.WorkingDirectory = @"C:\";
-                cmd.StartInfo.FileName = "C:/Program Files/PowerShell/7/pwsh.exe";
-                cmd.Start();
+                String cr_f = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/scoop/apps/pwsh/current/pwsh.exe";
+                if (File.Exists(cr_f))
+                {
+                    Process cmd = new Process();
+                    cmd.StartInfo.WorkingDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+                    cmd.StartInfo.FileName = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/scoop/apps/pwsh/current/pwsh.exe";
+                    cmd.Start();
+                }
+                else { 
+                    Process cmd = new Process();
+                    cmd.StartInfo.WorkingDirectory = @"C:\";
+                    cmd.StartInfo.FileName = "C:/Program Files/PowerShell/7/pwsh.exe";
+                    cmd.Start();
+                }
             }
             catch (Exception shell)
             {
