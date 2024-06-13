@@ -335,6 +335,11 @@ namespace UKEditor
             catch (Exception shell)
             {
                 MessageBox.Show(shell.Message, "エラーを捕捉しました");
+                MessageBox.Show("GitHub/PowerShell or Scoop / インストール");
+                MessageBox.Show("https://scoop.sh/");
+                MessageBox.Show("scoop bucket add main");
+                MessageBox.Show("scoop install main/pwsh");
+                MessageBox.Show("または");
                 MessageBox.Show("https://github.com/PowerShell/PowerShell/releases");
                 MessageBox.Show("PowerShellを手に入れて、デフォルトのPATHで設定してください。");
             }
