@@ -6,9 +6,11 @@ using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Management.Automation;
+using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using System.Reflection;
+using Newtonsoft.Json.Linq;
 
 namespace UKEditor
 {
@@ -400,12 +402,6 @@ namespace UKEditor
             }
         }
 
-        private void 設定ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            settingDialog dialog = new settingDialog(textBox1);
-            dialog.ShowDialog(this);
-        }
-
         private void 全範囲選択ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.textBox1.SelectAll();
@@ -520,6 +516,15 @@ Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
 上記の著作権表示および本許諾表示を、ソフトウェアのすべての複製または重要な部分に記載するものとします。
 
 ソフトウェアは「現状のまま」で、明示であるか暗黙であるかを問わず、何らの保証もなく提供されます。ここでいう保証とは、商品性、特定の目的への適合性、および権利非侵害についての保証も含みますが、それに限定されるものではありません。 作者または著作権者は、契約行為、不法行為、またはそれ以外であろうと、ソフトウェアに起因または関連し、あるいはソフトウェアの使用またはその他の扱いによって生じる一切の請求、損害、その他の義務について何らの責任も負わないものとします。
+
+※ The MIT License (MIT)
+https://www.nuget.org/packages/Newtonsoft.Json/9.0.1
+
+※ MICROSOFT SOFTWARE LICENSE TERMS
+https://www.nuget.org/packages/System.Net.Http/2.0.20710
+
+※ 天気予報 API（livedoor 天気互換）
+https://weather.tsukumijima.net/
 '
 ";
                 RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
@@ -815,7 +820,7 @@ Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
             try
             {
                 // 最新のバージョン
-                String stable = "1.0.3.11";
+                String stable = "1.0.3.13";
 
                 // アセンブリバージョン
                 Assembly asm = Assembly.GetExecutingAssembly();
@@ -863,6 +868,59 @@ Copyright (c) 2023, Takayuki Kamiyama All rights reserved.
             catch (Exception cept)
             {
                 MessageBox.Show(cept.Message, "メッセージを確認後、対処してください！");
+            }
+        }
+
+        private void 天気予報ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Weathertype t = new Weathertype();
+
+                // 天気予報の取得 (JSON形式)
+                t.baseUrl = "https://weather.tsukumijima.net/api/forecast";
+                
+                // 地域番号 : 初期値、170010 [北陸地方]
+                t.city = "170010";
+                t.url = string.Format("{0}?city={1}", t.baseUrl, t.city);
+                t.json = new HttpClient().GetStringAsync(t.url).Result;
+                JObject jobj = JObject.Parse(t.json);
+
+                // 地域番号 : 初期値、170010 [北陸地方]
+                MessageBox.Show(string.Format("地域番号 : 初期値、{0} [北陸地方]", t.city));
+                // 今日の天気
+                string today_weather = (string)((jobj["forecasts"][0]["telop"] as JValue).Value);
+                MessageBox.Show("今日の天気は、" + today_weather + "でしょう");
+                // 明日の天気
+                string tomorrow_weather = (string)((jobj["forecasts"][1]["telop"] as JValue).Value);
+                MessageBox.Show("明日の天気は、" + tomorrow_weather + "でしょう");
+                // 最低気温
+                string min_tem = (string)((jobj["forecasts"][1]["temperature"]["min"]["celsius"] as JValue).Value);
+                MessageBox.Show("最低気温は、" + min_tem + "℃でしょう");
+                // 最高気温
+                string max_tem = (string)((jobj["forecasts"][1]["temperature"]["max"]["celsius"] as JValue).Value);
+                MessageBox.Show("最高気温は、" + max_tem + "℃でしょう");
+                // 気象台
+                string des = (string)((jobj["description"]["text"] as JValue).Value);
+                MessageBox.Show(des);
+                // 発表時刻
+                DateTime des_time = (DateTime)((jobj["description"]["publicTime"] as JValue).Value);
+                DateTime dt = des_time;
+
+                t.reiwa_kanji = "令和"; t.OneYear = "年"; t.OneMonth = "月"; t.Onedays = "日";
+                t.OneHour = "時"; t.OneMinutes = "分"; t.Oneseconds = "秒";
+                
+                string reiwa = (t.reiwa_kanji + (dt.Year - 2018) + t.OneYear + dt.Month + t.OneMonth + dt.Day + t.Onedays 
+                    + dt.Hour + t.OneHour + dt.Minute + t.OneMinutes + dt.Second + t.Oneseconds);
+
+                MessageBox.Show("天気概況文の発表時刻 : " + reiwa);
+            
+            } catch (IOException ext) {
+                MessageBox.Show(string.Format("IOException Handler: {0}", ext.Message));
+            } catch (Exception ext) {
+                MessageBox.Show(string.Format("Generic Exception Handler: {0}", ext.Message));
+            } finally {
+                GC.Collect();
             }
         }
     }
