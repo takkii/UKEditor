@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("UKEditor")]
+[assembly: AssemblyTitle("Until Know Editor")]
 [assembly: AssemblyDescription("PowerShell拡張テキストエディタ。日頃の単純な作業を自動化するため、ルーティンでシェルを書きます。")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // すべての値を指定するか、下のように '*' を使ってビルドおよびリビジョン番号を 
 // 既定値にすることができます:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.3.11")]
-[assembly: AssemblyFileVersion("1.0.3.11")]
+[assembly: AssemblyVersion("1.0.3.13")]
+[assembly: AssemblyFileVersion("1.0.3.13")]
